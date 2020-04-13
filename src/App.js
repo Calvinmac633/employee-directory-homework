@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+// import UserCard from "./components/UserCard";
+import UserForm from "./components/UserForm";
+import UserRow from "./components/UserRow";
+import useUserModel from "./utils/useUserModel";
+import UserContext from "./utils/UserContext";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const userModel = useUserModel();
+
+  useEffect(() => {
+    console.log(userModel);
+  }, [userModel]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container text-center">
+      <div className="headers">
+        <h1 className="mt-4 mb-4">Employee Directory</h1>
+        <h5 className="mt-4 mb-4">Click on carrots to filter by heading or use the search box to narrow your results.</h5>
+      </div>
+      <div className="jumbotron">
+        <UserContext.Provider value={userModel}>
+          <UserForm />
+          <UserRow />
+          {/* <UserCard /> */}
+        </UserContext.Provider>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
