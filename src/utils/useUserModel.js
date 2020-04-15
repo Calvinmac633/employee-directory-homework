@@ -1,5 +1,6 @@
 import { useState } from "react";
 import profileImage from "../assets/images/profile.png";
+import API from "./API"
 
 const useUserModel = () => {
   const [imageState, setImage] = useState(profileImage);
@@ -9,6 +10,17 @@ const useUserModel = () => {
   const [DOBState, setDOB] = useState("01-01-2001");
   // const [statusState, setStatus] = useState("Excited");
   // const [excitementLevelState, setExcitementLevel] = useState("");
+
+  // const [users, setUsers] = useState([]);
+
+  // function loadUsers() {
+  //   API.getUsers()
+  //     .then(res => {
+  //       setUsers(res.data.results)
+  //       console.log(users)
+  //       console.log(res.data.results)
+  //     }).catch(err => console.log(err))
+  // }
 
   return {
     error: nameState === "" ? "Please enter a name" : "",

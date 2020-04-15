@@ -5,7 +5,7 @@ import UserContext from "../utils/UserContext";
 import profileImage from "../assets/images/profile.png";
 import API from "../utils/API"
 
-const UserData = () => {
+const UserData = ({ image, name, phone, email, DOB }) => {
     const userContext = useContext(UserContext);
 
     
@@ -15,7 +15,7 @@ const UserData = () => {
                 <img
                     className="center-block mt-3"
                     style={{ width: "2rem", margin: "0 auto" }}
-                    src={profileImage}
+                    src={image}
                     alt="profile"
                 />
                 <div className="card-body">
@@ -23,10 +23,10 @@ const UserData = () => {
             </div>}
             </td>
             {console.log(profileImage)}
-            <td>{userContext.name.value}</td>
-            <td>{userContext.name.value}</td>
-            <td>{userContext.name.value}</td>
-            <td>{userContext.name.value}</td>
+            <td>{name}</td>
+            <td>{phone}</td>
+            <td>{email}</td>
+            <td>{DOB}</td>
         </tr>
     );
 };
