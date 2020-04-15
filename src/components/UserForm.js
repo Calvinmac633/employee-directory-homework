@@ -6,7 +6,7 @@ function UserForm() {
   return (
     <form className="form-group">
       {/* <h1>Create Your Profile!</h1> */}
-      <label htmlFor="name">Name: </label>
+      {/* <label htmlFor="name">Name: </label> */}
       <input className="form-control mb-4" id="search" {...userModel.name} />
     </form>
   );

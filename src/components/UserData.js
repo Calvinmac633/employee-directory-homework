@@ -1,13 +1,7 @@
-
-import React, { useEffect, useState, useContext } from "react";
-// import React, { useState, useContext } from "react";
-import UserContext from "../utils/UserContext";
+import React from "react";
 import profileImage from "../assets/images/profile.png";
-import API from "../utils/API"
 
 const UserData = ({ image, name, phone, email, DOB }) => {
-    const userContext = useContext(UserContext);
-
     
     return (
         <tr>
@@ -25,7 +19,7 @@ const UserData = ({ image, name, phone, email, DOB }) => {
             {console.log(profileImage)}
             <td>{name}</td>
             <td>{phone}</td>
-            <td>{email}</td>
+            <td data-title="email">{email}</td>
             <td>{DOB}</td>
         </tr>
     );

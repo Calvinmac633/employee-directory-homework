@@ -1,26 +1,16 @@
 import { useState } from "react";
 import profileImage from "../assets/images/profile.png";
-import API from "./API"
 
 const useUserModel = () => {
   const [imageState, setImage] = useState(profileImage);
   const [nameState, setName] = useState("Bob");
-  const [phoneState, setPhone] = useState("911-911-9111");
-  const [emailState, setEmail] = useState("example@email.com");
-  const [DOBState, setDOB] = useState("01-01-2001");
-  // const [statusState, setStatus] = useState("Excited");
-  // const [excitementLevelState, setExcitementLevel] = useState("");
+  // const [phoneState, setPhone] = useState("911-911-9111");
+  // const [emailState, setEmail] = useState("example@email.com");
+  // const [DOBState, setDOB] = useState("01-01-2001");
+  const [phoneState] = useState("911-911-9111");
+  const [emailState] = useState("example@email.com");
+  const [DOBState] = useState("01-01-2001");
 
-  // const [users, setUsers] = useState([]);
-
-  // function loadUsers() {
-  //   API.getUsers()
-  //     .then(res => {
-  //       setUsers(res.data.results)
-  //       console.log(users)
-  //       console.log(res.data.results)
-  //     }).catch(err => console.log(err))
-  // }
 
   return {
     error: nameState === "" ? "Please enter a name" : "",
