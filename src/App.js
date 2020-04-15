@@ -7,6 +7,23 @@ import UserContext from "./utils/UserContext";
 import "./App.css";
 
 const App = () => {
+
+  // const [users, setUsers] = useState([]);
+
+  //   useEffect(() => {
+  //       loadUsers()
+  //   }, [])
+
+  //   function loadUsers() {
+  //       API.getUsers()
+  //           .then(res => {
+  //               setUsers(res.data.results)
+  //               console.log(users)
+  //               console.log(res.data.results)
+  //           }).catch(err => console.log(err))
+  //   }
+
+
   const userModel = useUserModel();
 
   useEffect(() => {
