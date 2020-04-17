@@ -20,17 +20,39 @@ const UserRow = () => {
       }).catch(err => console.log(err))
   }
 
+  function compare(a, b) {
+    const emailA = a.email.toUpperCase();
+    const emailB = b.email.toUpperCase();
+
+    let comparison = 0;
+    if (emailA > emailB) {
+      comparison = 1;
+    } else if (emailA < emailB) {
+      comparison = -1;
+    }
+    return comparison
+  }
+  users.sort(compare)
+
   return (
     <div className="container">
       <table className="table">
         <tr>
           <th>Image</th>
           <th>
-              Name
+            Name
           </th>
           <th>Phone</th>
-          <th>            
-            Email
+          <th>
+            <button type="button" class="btn btn-light"
+              // onClick={() => users.sortBy("email")}
+              onClick={() => 
+                // console.log(setUsers(users.sort(compare)));
+                setUsers(users.sort(compare))
+              }
+            >
+              Email
+              </button>
           </th>
           <th>DOB</th>
         </tr>

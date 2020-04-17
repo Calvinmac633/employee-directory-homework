@@ -4,7 +4,7 @@ import profileImage from "../assets/images/profile.png";
 const UserData = ({ image, name, phone, email, DOB }) => {
     
     return (
-        <tr>
+        <tbody>
             <td>{<div className="card mx-auto" style={{ width: "4rem", height: "4rem" }}>
                 <img
                     className="center-block mt-3"
@@ -21,7 +21,7 @@ const UserData = ({ image, name, phone, email, DOB }) => {
             <td>{phone}</td>
             <td data-title="email">{email}</td>
             <td>{DOB}</td>
-        </tr>
+        </tbody>
     );
 };
 
