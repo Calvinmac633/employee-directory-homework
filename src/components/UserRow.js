@@ -30,9 +30,17 @@ const UserRow = () => {
     } else if (emailA < emailB) {
       comparison = -1;
     }
+    console.log(comparison)
     return comparison
   }
   users.sort(compare)
+
+  const yaBoiTrynaSort = () => {
+
+    const organizedUsers = users.sort(compare);
+    setUsers(organizedUsers);
+    loadUsers();
+  }
 
   return (
     <div className="container">
@@ -45,11 +53,7 @@ const UserRow = () => {
           <th>Phone</th>
           <th>
             <button type="button" class="btn btn-light"
-              // onClick={() => users.sortBy("email")}
-              onClick={() => 
-                // console.log(setUsers(users.sort(compare)));
-                setUsers(users.sort(compare))
-              }
+              onClick={() => yaBoiTrynaSort()}
             >
               Email
               </button>
